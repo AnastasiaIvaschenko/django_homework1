@@ -1,0 +1,100 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "������ �� �������",
+      "description": "������ �� ������� �����/����, �������� ������ ��� ������������ � �������� �����"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "������ �� ��� + �����",
+      "description": "������ ����������� �� ��� �������� ������"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "������ �� ��� + ����",
+      "description": "������ ����������� �� ���, �������������, �������� ������ ��� ������������ � �������� �����"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "���+�������",
+      "description": "������� ����� ��� �������� ��������� ��������� � ����������� ������� "
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "�����",
+      "description": "",
+      "preview": "",
+      "category": 1,
+      "price": 15000,
+      "created_at": null,
+      "changed_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "�����",
+      "description": "",
+      "preview": "",
+      "category": 3,
+      "price": 5600,
+      "created_at": null,
+      "changed_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "������",
+      "description": "",
+      "preview": "",
+      "category": 3,
+      "price": 8600,
+      "created_at": null,
+      "changed_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "��������",
+      "description": "",
+      "preview": "",
+      "category": 4,
+      "price": 11000,
+      "created_at": null,
+      "changed_at": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "����",
+      "description": "",
+      "preview": "",
+      "category": 3,
+      "price": 6900,
+      "created_at": null,
+      "changed_at": null
+    }
+  }
+
+]
