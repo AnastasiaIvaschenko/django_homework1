@@ -3,43 +3,35 @@
     "model": "catalog.category",
     "pk": 1,
     "fields": {
-      "name": "������ �� �������",
-      "description": "������ �� ������� �����/����, �������� ������ ��� ������������ � �������� �����"
+      "name": "Фасады из массива",
+      "description": "массив ясеня или дуба"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Фасады из МДФ + шпон",
+      "description": "в основе мдф + шпон ясеня или дуба + эмаль или тонировка"
     }
   },
   {
     "model": "catalog.category",
     "pk": 3,
     "fields": {
-      "name": "������ �� ��� + �����",
-      "description": "������ ����������� �� ��� �������� ������"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 4,
-    "fields": {
-      "name": "������ �� ��� + ����",
-      "description": "������ ����������� �� ���, �������������, �������� ������ ��� ������������ � �������� �����"
-    }
-  },
-  {
-    "model": "catalog.category",
-    "pk": 5,
-    "fields": {
-      "name": "���+�������",
-      "description": "������� ����� ��� �������� ��������� ��������� � ����������� ������� "
+      "name": "Фасады из МДФ + эмаль",
+      "description": "в основе мдф + эмаль"
     }
   },
   {
     "model": "catalog.product",
     "pk": 1,
     "fields": {
-      "name": "�����",
-      "description": "",
+      "name": "Милан",
+      "description": "рамочный фасад, цена за кв. м.",
       "preview": "",
-      "category": 1,
-      "price": 15000,
+      "category": 3,
+      "price": 7900,
       "created_at": null,
       "changed_at": null
     }
@@ -48,8 +40,8 @@
     "model": "catalog.product",
     "pk": 2,
     "fields": {
-      "name": "�����",
-      "description": "",
+      "name": "Браво",
+      "description": "гладкий фасад без рамки, цена за кв.м.",
       "preview": "",
       "category": 3,
       "price": 5600,
@@ -61,11 +53,11 @@
     "model": "catalog.product",
     "pk": 3,
     "fields": {
-      "name": "������",
-      "description": "",
+      "name": "Валенсия",
+      "description": "рамочный фасад, цена за кв.м.",
       "preview": "",
-      "category": 3,
-      "price": 8600,
+      "category": 2,
+      "price": 11500,
       "created_at": null,
       "changed_at": null
     }
@@ -74,27 +66,13 @@
     "model": "catalog.product",
     "pk": 4,
     "fields": {
-      "name": "��������",
-      "description": "",
+      "name": "Палермо",
+      "description": "рамка из массива ясеня, филенка: мдф+шпон ясеня",
       "preview": "",
-      "category": 4,
-      "price": 11000,
-      "created_at": null,
-      "changed_at": null
-    }
-  },
-  {
-    "model": "catalog.product",
-    "pk": 5,
-    "fields": {
-      "name": "����",
-      "description": "",
-      "preview": "",
-      "category": 3,
-      "price": 6900,
+      "category": 1,
+      "price": 15100,
       "created_at": null,
       "changed_at": null
     }
   }
-
 ]
