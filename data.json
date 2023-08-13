@@ -3,7 +3,7 @@
     "model": "catalog.category",
     "pk": 1,
     "fields": {
-      "name": "Фасады из массива",
+      "name": "Фасады из массива:",
       "description": "массив ясеня или дуба"
     }
   },
@@ -11,7 +11,7 @@
     "model": "catalog.category",
     "pk": 2,
     "fields": {
-      "name": "Фасады из МДФ + шпон",
+      "name": "Фасады из МДФ-шпон:",
       "description": "в основе мдф + шпон ясеня или дуба + эмаль или тонировка"
     }
   },
@@ -19,7 +19,7 @@
     "model": "catalog.category",
     "pk": 3,
     "fields": {
-      "name": "Фасады из МДФ + эмаль",
+      "name": "Фасады из МДФ-эмаль:",
       "description": "в основе мдф + эмаль"
     }
   },
@@ -29,7 +29,7 @@
     "fields": {
       "name": "Милан",
       "description": "рамочный фасад, цена за кв. м.",
-      "preview": "",
+      "preview": "catalog/Мадрид.jpg",
       "category": 3,
       "price": 7900,
       "created_at": null,
@@ -42,7 +42,7 @@
     "fields": {
       "name": "Браво",
       "description": "гладкий фасад без рамки, цена за кв.м.",
-      "preview": "",
+      "preview": "catalog/Браво.jpg",
       "category": 3,
       "price": 5600,
       "created_at": null,
@@ -55,7 +55,7 @@
     "fields": {
       "name": "Валенсия",
       "description": "рамочный фасад, цена за кв.м.",
-      "preview": "",
+      "preview": "catalog/Валенсия.jpg",
       "category": 2,
       "price": 11500,
       "created_at": null,
@@ -68,7 +68,7 @@
     "fields": {
       "name": "Палермо",
       "description": "рамка из массива ясеня, филенка: мдф+шпон ясеня",
-      "preview": "",
+      "preview": "catalog/Элит_без_диагоналей.jpg",
       "category": 1,
       "price": 15100,
       "created_at": null,

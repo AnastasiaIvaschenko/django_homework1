@@ -1,0 +1,9 @@
+{% extends 'catalog/base.html' %}
+
+{% block content %}
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+  {% for object in object_list %}
+      {% include 'catalog/includes/in_category.html' with object=object %}
+  {% endfor %}
+</div>
+{% endblock %}
