@@ -1,12 +1,12 @@
+{% load my_tags %}
 {% extends 'catalog/base.html' %}
-
 {% block content %}
 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
   {% for object in object_list %}
   <div class="col-md-4">
     <div class="card mb-4 box-shadow">
       <img class="card-img-top"
-           src="{{ object.preview.url }}"
+           src="{% mediapath object.preview %}"
            alt="Card image cap">
       <div class="card-body">
         <p class="card-text">{{ object.name|title }}</p>
@@ -18,3 +18,8 @@
   {% endfor %}
 </div>
 {% endblock %}
+
+
+<!--           src="{{ object.preview.url }}"-->
+<!--           src={{ object.preview|mediapath }}-->
+<!--           src={% mediapath object.preview %}-->
