@@ -1,0 +1,17 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+
+  <h1>{{ object.title }} ({{ object.slug }})</h1>
+  <p>Дата создания: {{ object.created_at }}</p>
+  {% if object.preview %}
+    <img src="{{ object.preview.url }}" alt="Blog Preview">
+  {% endif %}
+  <p>{{ object.content }}</p>
+  <p>Просмотры: {{object.views_count}}</p>
+  {% if object.is_published %}
+    <p>Опубликовано</p>
+  {% else %}
+    <p>Не опубликовано</p>
+
+  {% endif %}
+{% endblock %}
