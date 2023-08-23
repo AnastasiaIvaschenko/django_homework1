@@ -29,7 +29,7 @@
     "fields": {
       "name": "Милан",
       "description": "рамочный фасад, цена за кв. м.",
-      "preview": "catalog/Мадрид.jpg",
+      "preview": "catalog/Madrid.jpg",
       "category": 3,
       "price": 7900,
       "created_at": null,
@@ -42,7 +42,7 @@
     "fields": {
       "name": "Браво",
       "description": "гладкий фасад без рамки, цена за кв.м.",
-      "preview": "catalog/Браво.jpg",
+      "preview": "catalog/Bravo.jpg",
       "category": 3,
       "price": 5600,
       "created_at": null,
@@ -55,7 +55,7 @@
     "fields": {
       "name": "Валенсия",
       "description": "рамочный фасад, цена за кв.м.",
-      "preview": "catalog/Валенсия.jpg",
+      "preview": "catalog/Valensia.jpg",
       "category": 2,
       "price": 11500,
       "created_at": null,
@@ -68,7 +68,7 @@
     "fields": {
       "name": "Палермо",
       "description": "рамка из массива ясеня, филенка: мдф+шпон ясеня",
-      "preview": "catalog/Элит_без_диагоналей.jpg",
+      "preview": "catalog/Palermo.jpg",
       "category": 1,
       "price": 15100,
       "created_at": null,

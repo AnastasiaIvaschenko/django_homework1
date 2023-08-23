@@ -1,9 +1,7 @@
 from django.shortcuts import render
 from catalog.models import Category, Product
-from django.http import HttpResponse
 
 
-# Create your views here.
 def homepage(request):
     context = {
         'object_list': Category.objects.all(),
@@ -11,14 +9,12 @@ def homepage(request):
     }
     return render(request, 'catalog/index2.html', context)
 
-
 def categories(request):
     context = {
         'object_list': Category.objects.all(),
         'title': 'Каталог - наши фасады'
     }
     return render(request, 'catalog/categories.html', context)
-
 
 def category_facades(request, pk):
     category_item = Category.objects.get(pk=pk)
