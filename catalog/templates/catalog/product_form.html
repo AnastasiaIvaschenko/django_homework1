@@ -13,15 +13,24 @@
                 </div>
                 <div class="card-body">
                     <form method="post">
-                        {% csrf_token %}
-                        {{ form.as_p }}
-                        <button type="submit" class="btn btn-outline-success">
-                            {% if object %}
-                                Сохранить
-                            {% else %}
-                                Добавить
-                            {% endif %}
+                        <div class="form-group">
+                            {% csrf_token %}
+                            {{ form.as_p }}
+                            <button type="submit" class="btn btn-outline-success">
+                                {% if object %}
+                                    Сохранить
+                                {% else %}
+                                    Добавить
+                                {% endif %}
                             </button>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_version">Текущая версия</label>
+                                {{ formset.management_form }}
+                                {% for form in formset.forms %}
+                                    {{ form.as_p }}
+                                {% endfor %}
+                        </div>
                     </form>
                 </div>
             </div>
