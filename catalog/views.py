@@ -3,6 +3,7 @@ from django.views.generic import ListView, CreateView, UpdateView
 from catalog.forms import ProductForm
 from catalog.models import Category, Product
 from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 def homepage(request):
@@ -51,12 +52,24 @@ class ProductsListView(ListView):
         return context_data
 
 
-class ProductsCreateView(CreateView):
+class ProductsCreateView(LoginRequiredMixin, CreateView):
+    login_url = 'users/login/'
+    redirect_field_name = 'login.html'
+
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:categories')
 
-class ProductsUpdateView(UpdateView):
+    def form_valid(self, form):
+        self.object = form.save()
+        self.object.designer = self.request.user
+        self.object.save()
+        return super().form_valid(form)
+
+
+class ProductsUpdateView(LoginRequiredMixin, UpdateView):
+    login_url = 'users/login/'
+    redirect_field_name = 'login.html'
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:categories')

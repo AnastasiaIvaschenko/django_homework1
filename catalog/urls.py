@@ -12,6 +12,4 @@ urlpatterns = [
     path('<int:pk>/facades/create/', ProductsCreateView.as_view(), name='facade_create'),
     path('facades/<int:pk>/update/', ProductsUpdateView.as_view(), name='facade_update'),
     path('contacts/', contacts),
-
 ]
-

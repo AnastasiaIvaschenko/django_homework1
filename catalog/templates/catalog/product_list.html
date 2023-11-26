@@ -11,6 +11,8 @@
       <img class="card-img-top" src="{{ object.preview|mediapath }}" alt="Card image cap">
       <div class="card-body">
         <p class="card-text">{{ object.name|title }}</p>
+        <span class="text-muted">{{ object.designer|default:'нет дизайнера'}}</span>
+
         {% with active_version=object.get_active_version %}
             {% if active_version %}
               <p>Активная версия: {{ active_version.version_number }}</p>
