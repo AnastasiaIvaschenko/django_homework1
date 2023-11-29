@@ -3,7 +3,7 @@ import random
 from django.contrib.auth.views import LoginView as BaseLoginView
 from django.contrib.auth.views import LogoutView as BaseLogoutView
 from django.core.mail import send_mail
-from django.shortcuts import redirect
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
 from django.views.generic import CreateView, UpdateView
 
@@ -35,20 +35,8 @@ class RegisterView(CreateView):
             recipient_list=[new_user.email]
         )
         return super().form_valid(form)
-    # def form_valid(self, form):
-    #     # Метод, который отрабатывает при успешной валидации формы
-    #     if form.is_valid():
-    #         self.object = form.save()
-    #         # Сохранение объекта перед тем, как установить ему пароль
-    #         if form.data.get('need_generate', False):
-    #             self.object.set_password(  # Функция установки пароля,
-    #                 # которая хеширует строку для того,
-    #                 # чтобы не хранить пароль в открытом виде в БД
-    #                 self.object.make_random_password(12)  # Функция генерации пароля
-    #             )
-    #             self.object.save()
-    #
-    #     return super().form_valid(form)
+        # return redirect(reverse('catalog:homepage'))
+
 
 class UserUpdateView(UpdateView):
     model = User

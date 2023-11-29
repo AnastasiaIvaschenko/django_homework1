@@ -22,13 +22,6 @@ class CategoryListView(ListView):
     }
 
 
-# def category_facades(request, pk):
-#     category_item = Category.objects.get(pk=pk)
-#     context = {
-#         'object_list': Product.objects.filter(category_id=pk),
-#         'title': f'Каталог - все наши фасады {category_item.name}'
-#     }
-
 def product_list(request):
     products = Product.objects.all()
     context = {'object_list': products}
@@ -53,8 +46,7 @@ class ProductsListView(ListView):
 
 
 class ProductsCreateView(LoginRequiredMixin, CreateView):
-    login_url = 'users/login/'
-    redirect_field_name = 'login.html'
+    login_url = reverse_lazy('users:login')
 
     model = Product
     form_class = ProductForm
@@ -68,12 +60,11 @@ class ProductsCreateView(LoginRequiredMixin, CreateView):
 
 
 class ProductsUpdateView(LoginRequiredMixin, UpdateView):
-    login_url = 'users/login/'
-    redirect_field_name = 'login.html'
+    login_url = reverse_lazy('users:login')
+
     model = Product
     form_class = ProductForm
     success_url = reverse_lazy('catalog:categories')
-
 
 
 def contacts(request):
