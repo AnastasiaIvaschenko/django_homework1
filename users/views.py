@@ -20,7 +20,6 @@ from django.shortcuts import get_object_or_404, render
 from django.contrib.auth.models import User
 
 
-
 class LoginView(BaseLoginView):
     template_name = 'users/login.html'
 
@@ -65,7 +64,7 @@ def activate_account(request, activation_token):
         user.save()
         return redirect(reverse('catalog:homepage'))  # Перенаправление на главную страницу после активации
     except User.DoesNotExist:
-        return render(request, 'activation_error.html')
+        return render(request, 'users/activation_error.html')
 
 
 class UserUpdateView(UpdateView):
