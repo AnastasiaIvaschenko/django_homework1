@@ -10,7 +10,7 @@
                     <form method="post">
                         {% csrf_token %}
                         {{ form.as_p }}
-                        <a href="{% url 'users:register' %}" class="btn btn-success">Регистрация</a>
+                        <input type="submit" class="btn btn-success" value="Отправить">
                     </form>
                 </div>
                 <div class="card-footer"></div>

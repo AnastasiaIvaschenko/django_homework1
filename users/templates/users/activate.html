@@ -1,0 +1,10 @@
+{% extends 'catalog/base.html' %}
+{% load static %}
+
+{% block content %}
+  <h2>Активация учетной записи</h2>
+  <p>Для активации вашей учетной записи, пожалуйста, нажмите на ссылку ниже:</p>
+  <a href="{% url 'users:activate' uidb64=uidb64 activation_token=activation_token %}">
+    Активировать учетную запись
+  </a>
+{% endblock %}
