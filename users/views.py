@@ -58,11 +58,12 @@ class RegisterView(CreateView):
 
 def activate_account(request, uidb64, activation_token):
     try:
+        user_model = get_user_model()
         uid = urlsafe_base64_decode(uidb64).decode
-        user = User.objects.get(pk=uid, activation_token=activation_token)
+        user = user_model.objects.get(pk=uid, activation_token=activation_token)
         user.is_active = True
         user.save()
-        return redirect(reverse('catalog:homepage'))  # Перенаправление на главную страницу после активации
+        return redirect(reverse('activate'))  # Перенаправление на страницу подтверждения активации activate.html
     except (TypeError, ValueError, OverflowError, ObjectDoesNotExist):
         return render(request, 'users/activation_error.html')
 
