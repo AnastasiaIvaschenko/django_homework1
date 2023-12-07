@@ -55,6 +55,7 @@ class ProductsCreateView(LoginRequiredMixin, CreateView):
     def form_valid(self, form):
         self.object = form.save()
         self.object.designer = self.request.user
+        # self.object.category = self.request.category
         self.object.save()
         return super().form_valid(form)
 

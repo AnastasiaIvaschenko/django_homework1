@@ -5,7 +5,7 @@ from django.contrib.auth.views import LogoutView as BaseLogoutView
 from django.core.mail import send_mail
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy, reverse
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, TemplateView
 
 from config import settings
 from users.forms import UserRegisterForm, UserForm
@@ -31,7 +31,7 @@ class LogoutView(BaseLogoutView):
 class RegisterView(CreateView):
     model = User
     form_class = UserRegisterForm
-    success_url = reverse_lazy('users:login')
+    success_url = reverse_lazy('users:register_success')
     template_name = 'users/register.html'
 
     def form_valid(self, form):
@@ -41,8 +41,8 @@ class RegisterView(CreateView):
         new_user.save()
         # Генерация кода для юзера и запись в БД
         token = default_token_generator.make_token(new_user)
-        uid = urlsafe_base64_encode(force_bytes(new_user.pk))
-        activation_url = f'http://{get_current_site(self.request).domain}/users/activate/{uid}/{token}/'
+        # uid = urlsafe_base64_encode(force_bytes(new_user.pk))
+        activation_url = f'http://{get_current_site(self.request).domain}/users/activate/{token}/'
         new_user.activation_token = token
         new_user.save()
 
@@ -56,14 +56,14 @@ class RegisterView(CreateView):
         return super().form_valid(form)
 
 
-def activate_account(request, uidb64, activation_token):
+def activate_account(request, activation_token):
     try:
-        user_model = get_user_model()
-        uid = urlsafe_base64_decode(uidb64).decode
-        user = user_model.objects.get(pk=uid, activation_token=activation_token)
+        # user_model = get_user_model()
+        # uid = urlsafe_base64_decode(uidb64).decode
+        user = User.objects.get(activation_token=activation_token)
         user.is_active = True
         user.save()
-        return redirect(reverse('activate'))  # Перенаправление на страницу подтверждения активации activate.html
+        return redirect(reverse('users:login'))  # Перенаправление на страницу входа
     except (TypeError, ValueError, OverflowError, ObjectDoesNotExist):
         return render(request, 'users/activation_error.html')
 
@@ -89,15 +89,8 @@ def generate_new_password(request):
     request.user.save()
     return redirect(reverse('catalog:homepage'))
 
-    # def form_valid(self, form):
-    #     new_user = form.save()
-    #     send_mail(
-    #         subject='Поздравляем вас с регистрацией',
-    #         message='Вы зарегистрировались на новой платформе, добро пожаловать!',
-    #         from_email=settings.EMAIL_HOST_USER,
-    #         recipient_list=[new_user.email]
-    #     )
-    #     return super().form_valid(form)
-    #     # return redirect(reverse('catalog:homepage'))
+
+class RegisterSuccessView(TemplateView):
+    template_name = 'users/register_success.html'
 
 
